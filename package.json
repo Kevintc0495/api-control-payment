@@ -17,7 +17,7 @@
     "migration": "npx sequelize-cli db:migrate",
     "undo-m": "npx sequelize-cli db:migrate:undo",
     "undo-all-m": "npx sequelize-cli db:migrate:all",
-    "lint": "eslint src/**/*.{ts,js}",
+    "lint": "eslint src/**/*.ts",
     "docker": "docker compose up -d"
   },
   "keywords": [],
