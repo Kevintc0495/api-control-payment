@@ -1,0 +1,25 @@
+export class StudentDetailResponseDto {
+  id: number = 0;
+  address: string = "";
+  age: string = "";
+  birthday: string = "";
+  cellPhone: string = "";
+  documentNumber: string = "";
+  email: string = "";
+  idDocumentsType: number = 0;
+  idHeadquarter: number = 0;
+  lastName: string = "";
+  names: string = "";
+  tutorNames: string = "";
+  tutorLastName: string = "";
+  cellphoneTutor: string = "";
+  schooling: string = "";
+  grate: string = "";
+  school: string = "";
+  diagnosis: boolean = false;
+  medicalReport: boolean = false;
+  certificateDisability: boolean = false;
+  conadisCard: boolean = false;
+  psychologicalReport: boolean = false;
+  state: string = "";
+}

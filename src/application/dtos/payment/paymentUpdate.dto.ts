@@ -1,0 +1,18 @@
+export class PaymentUpdateDto {
+  id: number = 0;
+  idStudent: number = 0;
+  idPaymentStatus: number = 0;
+  idPaymentType: number = 0;
+  idBank: number = 0;
+  idHeadquarter: number = 0;
+  customer: string = "";
+  documentNumber: string = "";
+  cellphone: string = "";
+  email: string = "";
+  code: string = "";
+  comment: string = "";
+  cancellationComment: string = "";
+  amount: number = 0;
+  otherAmounts: string = "";
+  userUpdate: number = 0;
+}
