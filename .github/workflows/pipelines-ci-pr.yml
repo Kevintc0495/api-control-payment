@@ -7,9 +7,33 @@ on:
       - develop
 
 jobs:
+  pr-size:
+    name: Validar tamaño del PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verificar límite de líneas
+        env:
+          MAX_LINES: 500
+        run: |
+          LINES=$(git diff --stat origin/${{ github.base_ref }}...HEAD | tail -1 | grep -oP '\d+(?= insertion)' | head -1)
+          LINES=${LINES:-0}
+          echo "Líneas añadidas: $LINES"
+          if [ "$LINES" -gt "$MAX_LINES" ]; then
+            echo "❌ El PR excede el límite de $MAX_LINES líneas añadidas ($LINES líneas)."
+            echo "Divide los cambios en PRs más pequeños."
+            exit 1
+          fi
+          echo "✅ Tamaño del PR aceptable ($LINES / $MAX_LINES líneas)."
+
   test:
     name: Run tests
     runs-on: ubuntu-latest
+    needs: pr-size
 
     steps:
       - name: Clonar repo
