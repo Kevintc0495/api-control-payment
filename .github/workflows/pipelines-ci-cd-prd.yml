@@ -17,13 +17,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instalar dependencias
-        run: npm ci
-
       - name: Instalar pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10
 
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
