@@ -10,6 +10,9 @@ import { studentRouter } from "./student.routes";
 import { userRouter } from "./user.routes";
 
 const router = Router();
+router.get("/test", (_req, res) => {
+  res.send("App funcionando!");
+});
 router.use(bankRouter);
 router.use(documentTypeRouter);
 router.use(accountRouter);
