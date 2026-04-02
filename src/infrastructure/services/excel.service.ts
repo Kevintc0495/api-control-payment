@@ -41,6 +41,6 @@ export class ExcelService<T> implements IExcelService<T> {
 
   async generateBuffer(): Promise<Buffer> {
     await this.autoSizeColumns();
-    return (await this.workbook.xlsx.writeBuffer()) as Buffer;
+    return (await this.workbook.xlsx.writeBuffer()) as unknown as Buffer;
   }
 }
