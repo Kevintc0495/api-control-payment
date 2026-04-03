@@ -1,8 +1,8 @@
-# BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-# if [ "$BRANCH" = "main" ]; then
-#   echo "Error: push directo a 'main' no está permitido. Usa una rama y abre un Pull Request."
-#   exit 1
-# fi
+if [ "$BRANCH" = "main" ]; then
+  echo "Error: push directo a 'main' no está permitido. Usa una rama y abre un Pull Request."
+  exit 1
+fi
 
 pnpm test
